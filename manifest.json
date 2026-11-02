@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "FormPilot - AI Form Assistant",
+  "version": "1.1",
+  "description": "Explains complex government form fields, Hindi/regional script requirements, and prevents submission mistakes.",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "all_frames": true
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
